@@ -12,7 +12,7 @@ body {
   font-size: 16px;
   color: #333;
   line-height: 1.5;
-  background-image: url(assets/bg.jpg);
+  background-image: url(../IMG/bg.jpg);
   background-size: auto;
 }
 
@@ -132,6 +132,7 @@ h3 {
   padding: 20px;
   min-height: 400px;
   min-width: 300px;
+  z-index: 100;
 }
 
 #vaciar-carrito {
@@ -192,7 +193,7 @@ h3 {
 
 /* HERO */
 .hero {
-  background-image: url(assets/header.webp);
+  background-image: url(../IMG/header.webp);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -292,6 +293,7 @@ main {
 /*         CARDS            */
 
 #mostrandoComputadoras,
+#mostrandoNotebooks,
 #mostrandoTeclados,
 #mostrandoMouse {
   display: grid;
@@ -316,14 +318,8 @@ main {
 }
 
 .card:hover {
-  background-color: blue;
+  background-color: rgb(184, 184, 251);
   color: white;
-}
-
-.card .btnAgregar {
-  display: block;
-  width: 100%;
-  margin: 10px auto;
 }
 
 .card .div-info .precio{
@@ -336,6 +332,12 @@ main {
   font-size: 1.3rem;
   font-weight: bold;
   color: #181818;
+}
+
+.card .btnAgregar, .btnDetalles {
+  display: block;
+  width: 100%;
+  margin: 10px auto;
 }
 
 .btnAgregar {
@@ -357,6 +359,16 @@ main {
   transform: scale(1.1);
 }
 
+.btnDetalles {
+  background-color: #2e46ff;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: all .3s ease;
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+
 .banner {
   display: flex;
   justify-content: space-between;
@@ -368,19 +380,19 @@ main {
 }
 
 .banner.computadoras {
-  background-image: url(assets/bannerCompu.webp);
+  background-image: url(../IMG/bannerCompu.webp);
   background-size: cover;
   background-position: center;
 }
 
 .banner.teclados {
-  background-image: url(assets/bannerTeclados.webp);
+  background-image: url(../IMG/bannerTeclados.webp);
   background-size: cover;
   background-position: center;
 }
 
 .banner.mouse {
-  background-image: url(assets/bannerMouse.webp);
+  background-image: url(../IMG/bannerMouse.webp);
   background-size: cover;
   background-position: center;
 }
@@ -407,6 +419,54 @@ main {
   transition: all .3s ease;
   transform: scale(1.1);
 }
+
+/* ventana modal detalles */
+/* Estilo para el fondo oscuro */
+.modal {
+  display: none; /* Oculta la ventana modal por defecto */
+  position: fixed; /* Se mantiene en posición fija en la pantalla */
+  z-index: 1; /* Se asegura de que la modal esté sobre otros elementos */
+  left: 0;
+  top: 0;
+  width: 100%; /* Cubre toda la pantalla en ancho */
+  height: 100%; /* Cubre toda la pantalla en alto */
+  overflow: auto; /* Añade scroll si es necesario */
+  background-color: rgba(0,0,0,0.4); /* Fondo oscuro semitransparente */
+}
+
+/* Estilo para el contenido de la modal */
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* Centra la modal en la pantalla con un margen superior */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 50%; /* Ajusta esto según lo ancho que quieras que sea la modal */
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2); /* Añade sombra para un efecto 3D */
+  animation-name: animatetop;
+  animation-duration: 0.4s;
+}
+
+/* Estilo para el botón de cerrar */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Animación para que la modal aparezca deslizándose desde arriba */
+@keyframes animatetop {
+  from {top: -300px; opacity: 0}
+  to {top: 0; opacity: 1}
+}
+
 
 
 /*    FOOTER    */

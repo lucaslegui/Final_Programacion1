@@ -2,25 +2,25 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="shortcut icon" href="assets/favicon.png" type="image/x-icon">
-    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./assets/IMG/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="./assets/CSS/stylo.css">
     <title>CyberGear - Productos informáticos</title>
 </head>
 
 <body>
     <header>
         <nav class="navbar container">
-            <img src="assets/logo.png" class="logo" alt="Logo CyberGear" />
+            <img src="assets/IMG/logo.png" class="logo" alt="Logo CyberGear" />
             <ul>
-                <li class="links"><a href="#computadoras">Computadoras</a></li> 
+                <li class="links"><a href="#computadoras">Computadoras</a></li>
                 <li class="links"><a href="#teclados">Teclados</a></li>
                 <li class="links"><a href="#mouse">Mouse</a></li>
             </ul>
             <div class="carrito">
-                <img src="assets/carrito.png" alt="Carrito vacio" class="carrito-img" />
+                <img src="assets/IMG/carrito.png" alt="Carrito vacio" class="carrito-img" />
                 <div id="carrito-modal">
                     <table id="lista-carrito">
                         <thead>
@@ -34,7 +34,9 @@
                         <tbody></tbody>
                     </table>
                     <a href="#" id="vaciar-carrito" class="btn-vaciar">Vaciar Carrito</a>
-                    <button id="cerrarCarrito" class="btnCerrar">X Cerrar Carrito</button>
+                    <button id="cerrarCarrito" class="btnCerrar">
+                        X Cerrar Carrito
+                    </button>
                 </div>
             </div>
         </nav>
@@ -49,40 +51,69 @@
             </div>
         </div>
     </header>
+
     <main>
+        <!-- filtro categorias -->
+        <div class="filtros">
+            <div class="container">
+                <div class="filtro">
+                    <h3>Filtrar por categoría</h3>
+                    <select name="categorias" id="categorias">
+                        <option value="">Todas</option>
+                        <option value="computadoras">Computadoras</option>
+                        <option value="teclados">Teclados</option>
+                        <option value="mouse">Mouse</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
         <section class="productos">
             <div class="titulo">
                 <h1>Productos informáticos</h1>
             </div>
             <div class="categorias container">
-                <div class="computadoras" id="computadoras">
+                <article class="computadoras" id="computadoras">
                     <div class="banner computadoras">
                         <h3>Computadoras</h3>
-                        <button type="button" class="boton" id="boton-computadoras">Mostrar</button>
                     </div>
                     <div id="mostrandoComputadoras"></div>
-                </div>
-                <div class="Teclados" id="teclados">
+                </article>
+                <article class="notebooks" id="notebooks">
+                    <div class="banner notebooks">
+                        <h3>Notebooks</h3>
+                    </div>
+                    <div id="mostrandoNotebooks"></div>
+                </article>
+                <article class="Teclados" id="teclados">
                     <div class="banner teclados">
                         <h3>Teclados</h3>
-                        <button type="button" class="boton" id="boton-teclados">Mostrar</button>
                     </div>
                     <div id="mostrandoTeclados"></div>
-                </div>
-                <div class="Mouse" id="mouse">
+                </article>
+                <article class="Mouse" id="mouse">
                     <div class="banner mouse">
                         <h3>Mouse</h3>
-                        <button type="button" class="boton" id="boton-mouse">Mostrar</button>
                     </div>
                     <div id="mostrandoMouse"></div>
-                </div>
+                </article>
             </div>
         </section>
+        
+        <!-- Estructura de la ventana modal -->
+        <div id="modal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2 id="modal-title">Detalles del Producto</h2>
+                <p id="modal-details"></p>
+            </div>
+        </div>
+
     </main>
     <footer>
         <div class="container">
             <div class="col-1">
-                <img src="assets/head.png" alt="logo robot marca">
+                <img src="assets/IMG/head.png" alt="logo robot marca" />
                 <p>LUCAS LEGUIZAMON</p>
                 <p>Trabajo Practico NRO II | Programación I | DWN2BP</p>
             </div>
@@ -93,15 +124,15 @@
             </div>
             <div class="col-3">
                 <h4>¡Seguinos en nuestras redes!</h4>
-                <a href=""><img src="" alt="logo instagram"></a>
-                <a href=""><img src="" alt="logo facebook"></a>
-                <a href=""><img src="" alt="logo twitter"></a>
-                <a href=""><img src="" alt="logo whatsapp"></a>
-                <a href=""><img src="" alt="logo linkedin"></a>
+                <a href=""><img src="#" alt="logo instagram" /></a>
+                <a href=""><img src="#" alt="logo facebook" /></a>
+                <a href=""><img src="#" alt="logo twitter" /></a>
+                <a href=""><img src="#" alt="logo whatsapp" /></a>
+                <a href=""><img src="#" alt="logo linkedin" /></a>
             </div>
         </div>
     </footer>
-    <script src="dummi_app.js"></script>
+    <script src="./assets/JS/app.js"></script>
 </body>
 
 </html>
