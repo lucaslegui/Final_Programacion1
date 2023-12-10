@@ -311,18 +311,26 @@ function mostrarProductos(productos, contenedor) {
   }
 }
 
+// Modal
 function mostrarDetalles(producto) {
   let modal = document.getElementById("modal");
   let title = document.getElementById("modal-title");
-  let details = document.getElementById("modal-details");
+  let image = document.getElementById("modal-image");
+  let description = document.getElementById("modal-description");
+  let price = document.getElementById("modal-price");
+  let buyButton = document.getElementById("modal-comprar-button");
 
   // Actualizar contenido del modal
   title.textContent = producto.nombre;
-  details.textContent = producto.detalles;
+  image.src = producto.imagen;
+  description.textContent = producto.detalles;
+  price.textContent = '$'+ producto.precio;
+  buyButton.textContent = "Comprar";
 
   // Mostrar el modal
   modal.style.display = "block";
 }
+
 
 // cerrar modal
 let closeModal = document.getElementsByClassName("close")[0];

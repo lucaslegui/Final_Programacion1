@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
     <link rel="shortcut icon" href="./assets/IMG/favicon.png" type="image/x-icon">
     <link rel="stylesheet" href="./assets/CSS/stylo.css">
     <title>CyberGear - Productos informáticos</title>
@@ -75,25 +76,25 @@
             <div class="categorias container">
                 <article class="computadoras" id="computadoras">
                     <div class="banner computadoras">
-                        <h3>Computadoras</h3>
+                        <h3 class="tituloSeccion">Computadoras</h3>
                     </div>
                     <div id="mostrandoComputadoras"></div>
                 </article>
                 <article class="notebooks" id="notebooks">
                     <div class="banner notebooks">
-                        <h3>Notebooks</h3>
+                        <h3 class="tituloSeccion">Notebooks</h3>
                     </div>
                     <div id="mostrandoNotebooks"></div>
                 </article>
                 <article class="Teclados" id="teclados">
                     <div class="banner teclados">
-                        <h3>Teclados</h3>
+                        <h3 class="tituloSeccion">Teclados</h3>
                     </div>
                     <div id="mostrandoTeclados"></div>
                 </article>
                 <article class="Mouse" id="mouse">
                     <div class="banner mouse">
-                        <h3>Mouse</h3>
+                        <h3 class="tituloSeccion">Mouse</h3>
                     </div>
                     <div id="mostrandoMouse"></div>
                 </article>
@@ -103,11 +104,19 @@
         <!-- Estructura de la ventana modal -->
         <div id="modal" class="modal">
             <div class="modal-content">
-                <span class="close">&times;</span>
-                <h2 id="modal-title">Detalles del Producto</h2>
-                <p id="modal-details"></p>
+                <div class="modal-header">
+                    <span class="close">&times;</span>
+                    <img id="modal-image" src="" alt="IMAGEN DEL PRODUCTO" class="img-modal">
+                </div>
+                <div class="modal-body">
+                    <h2 id="modal-title" class="titulo">TITULO DEL PRODUCTO</h2>
+                    <p id="modal-description" class="detalles">DESCRIPCION</p>
+                    <p id="modal-price">Precio</p>
+                </div>
+                
+                <button id="modal-comprar-button" class="comprar">BOTON COMPRAR</button>
             </div>
-        </div>
+        </div>        
 
     </main>
     <footer>
@@ -115,7 +124,7 @@
             <div class="col-1">
                 <img src="assets/IMG/head.png" alt="logo robot marca" />
                 <p>LUCAS LEGUIZAMON</p>
-                <p>Trabajo Practico NRO II | Programación I | DWN2BP</p>
+                <p>Trabajo Practico FINAL | Programación I | DWN2BP</p>
             </div>
             <div class="col-2">
                 <a class="enlace" href="#">¿Quienes Somos?</a>
