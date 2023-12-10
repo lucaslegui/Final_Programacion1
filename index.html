@@ -6,7 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <!-- favicon -->
     <link rel="shortcut icon" href="./assets/IMG/favicon.png" type="image/x-icon">
+    <!-- CSS -->
     <link rel="stylesheet" href="./assets/CSS/stylo.css">
     <title>CyberGear - Productos informáticos</title>
 </head>
@@ -100,23 +102,27 @@
                 </article>
             </div>
         </section>
-        
+
         <!-- Estructura de la ventana modal -->
         <div id="modal" class="modal">
             <div class="modal-content">
-                <div class="modal-header">
-                    <span class="close">&times;</span>
+
+                <a><i class="fas fa-times close-btn close"></i></a>
+
+                <div class="modal-img">
                     <img id="modal-image" src="" alt="IMAGEN DEL PRODUCTO" class="img-modal">
                 </div>
-                <div class="modal-body">
+
+                <div class="modal-info">
                     <h2 id="modal-title" class="titulo">TITULO DEL PRODUCTO</h2>
+                    <h4 id="modal-category" class="categoria">CATEGORIA</h4>
                     <p id="modal-description" class="detalles">DESCRIPCION</p>
-                    <p id="modal-price">Precio</p>
+                    <p id="modal-price" class="precio">Precio</p>
+                    <button id="modal-comprar-button" class="comprar">BOTON COMPRAR</button>
                 </div>
-                
-                <button id="modal-comprar-button" class="comprar">BOTON COMPRAR</button>
+
             </div>
-        </div>        
+        </div>
 
     </main>
     <footer>
@@ -141,6 +147,9 @@
             </div>
         </div>
     </footer>
+    <!-- fontawesome -->
+    <script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
+    <!-- JS -->
     <script src="./assets/JS/app.js"></script>
 </body>
 

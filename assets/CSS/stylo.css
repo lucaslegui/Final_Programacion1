@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
 * {
   margin: 0;
@@ -9,7 +9,7 @@
 
 
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'poppins', sans-serif;
   font-size: 16px;
   color: #333;
   line-height: 1.5;
@@ -62,7 +62,7 @@ td:last-child {
   padding-right: 0;
 }
 
-h1{
+h1 {
   font-size: 4rem;
   font-weight: 600;
   text-align: center;
@@ -258,9 +258,6 @@ main {
   margin-top: 60px;
 }
 
-.titulo {
-  text-align: center;
-}
 
 .boton {
   background-color: #ff2e63;
@@ -324,19 +321,20 @@ main {
   color: white;
 }
 
-.card .div-info .precio{
+.card .div-info .precio {
   font-size: 1.2rem;
   font-weight: bold;
   color: #181818;
 }
 
-.card h4{
+.card h4 {
   font-size: 1.3rem;
   font-weight: bold;
   color: #181818;
 }
 
-.card .btnAgregar, .btnDetalles {
+.card .btnAgregar,
+.btnDetalles {
   display: block;
   width: 100%;
   margin: 10px auto;
@@ -406,7 +404,7 @@ main {
   background-position: center;
 }
 
-.tituloSeccion{
+.tituloSeccion {
   font-size: 3.5rem;
   text-shadow: 2px 2px 4px #000000;
 }
@@ -436,46 +434,129 @@ main {
 }
 
 /* ventana modal detalles */
-/* Estilo para el fondo oscuro */
-.modal {
-  display: none; 
-  position: fixed;
-  z-index: 1;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  background-color: rgba(0,0,0,0.4); 
-}
 
+.modal {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  z-index: 2;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+}
 
 .modal-content {
-  /* display: block; */
-  background-color: #fefefe;
-  margin: 15% auto;
-  padding: 20px;
-  border: 1px solid #888;
-   width: 50%; 
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-  animation-name: animatetop;
-  animation-duration: 0.4s;
+  position: relative;
+  display: flex;
+  width: 800px;
+  max-height: 600px;
+  margin: 20px;
 }
 
-.img-modal {
-  display: block;
-  margin: 0 auto;
-  max-width: 100%;
-  max-height: 300px;
-  border-radius: 5px;
+.modal-img {
+  z-index: 2;
+  background-color: #1D212B;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 45%;
+  height: 90%;
+  transform: translateY(25px);
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+.modal-img img {
+  z-index: 2;
+  position: relative;
+  width: auto;
+  max-height: 450px;
+  object-fit: contain;
+  left: -50px;
+  filter: drop-shadow(0px 0px 20px #0000009e);
+
+}
+
+.modal-info {
+  z-index: 2;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  width: 55%;
+  height: 100%;
+  box-sizing: border-box;
+  padding: 40px;
+  border-radius: 10px;
+}
+
+.modal-info .titulo {
+  font-size: 35px;
+  line-height: 32px;
+  margin: 20px 0px 0px 10px;
+
+}
+
+.modal-info .categoria {
+  font-size: 15px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin: 0px 0px 10px 10px;
+}
+
+.modal-info .detalles {
+  font-size: 15px;
+  margin: 10px;
+}
+
+.modal-info .precio {
+  font-size: 45px;
+  font-weight: 300;
+  margin: 10px;
+}
+
+/* button comprar */
+.modal-info .comprar {
+  width: 100%;
+  height: 38px;
+  padding: 0 30px;
+  color: #555;
+  text-align: center;
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 38px;
+  letter-spacing: .1rem;
+  text-transform: uppercase;
+  text-decoration: none;
+  white-space: nowrap;
+  background-color: transparent;
+  border-radius: 4px;
+  border: 1px solid #bbb;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+.modal-info .comprar:hover {
+  background-color: #ff2e63;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: all .3s ease;
+  transform: scale(1.1);
 }
 
 /* Estilo para el btn de cerrar */
 .close {
-  color: #aaa;
+  color: #555;
+  z-index: 3;
+  right: 0;
+  position: absolute;
   /* float: right; */
-  font-size: 28px;
-  font-weight: bold;
+  font-size: 20px;
+  margin: 20px;
 }
 
 .close:hover,
@@ -487,11 +568,81 @@ main {
 
 /* Animacion modal */
 @keyframes animatetop {
-  from {top: -300px; opacity: 0}
-  to {top: 0; opacity: 1}
+  from {
+    top: -300px;
+    opacity: 0
+  }
+
+  to {
+    top: 0;
+    opacity: 1
+  }
 }
 
+/* responsive modal */
+@media (max-width: 900px) {
+  .container {
+    width: 95%;
+    /* padding: 0 20px; */
+  }
 
+  .modal-content {
+    flex-direction: column;
+    width: 550px;
+    height: auto;
+
+    .close {
+      z-index: 4;
+    }
+
+    .modal-img {
+      z-index: 3;
+      width: 100%;
+      height: 200px;
+      transform: translateY(0);
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+      border-bottom-left-radius: 0;
+
+      & img {
+        left: initial;
+        max-width: 300px;
+        max-height: 300px;
+        object-fit: contain;
+      }
+    }
+
+    .modal-info {
+      width: 100%;
+      height: auto;
+      padding: 20px;
+      border-top-left-radius: 0;
+      border-top-right-radius: 0;
+
+      .titulo {
+        font-size: 25px;
+        margin: 20px 0px 0px 5px;
+      }
+
+      .categoria {
+        font-size: 10px;
+        margin: 0px 0px 10px 5px;
+      }
+
+      .detalles {
+        font-size: 13px;
+        margin: 5px;
+        
+      }
+
+      .precio {
+        font-size: 30px;
+        margin: 5px;
+      }
+    }
+
+  }
+}
 
 /*    FOOTER    */
 

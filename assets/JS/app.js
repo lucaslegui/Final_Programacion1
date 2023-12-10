@@ -1,6 +1,7 @@
 //array de objetos que continen los productos
 const computadoras = [
   {
+    categoria: "computadoras",
     nombre: "PC Escritorio Intel",
     imagen: "assets/IMG/productos/computadora1.webp",
     detalles:
@@ -10,6 +11,7 @@ const computadoras = [
     stock: 120,
   },
   {
+    categoria: "computadoras",
     nombre: "PC Escritorio Advanced",
     imagen: "assets/IMG/productos/computadora2.webp",
     detalles:
@@ -19,6 +21,7 @@ const computadoras = [
     stock: 90,
   },
   {
+    categoria: "computadoras",
     nombre: "PC Escritorio Expert",
     imagen: "assets/IMG/productos/computadora3.webp",
     detalles:
@@ -28,6 +31,7 @@ const computadoras = [
     stock: 97,
   },
   {
+    categoria: "computadoras",
     nombre: "PC Gamer Intel",
     imagen: "assets/IMG/productos/computadora4.webp",
     detalles:
@@ -37,6 +41,7 @@ const computadoras = [
     stock: 45,
   },
   {
+    categoria: "computadoras",
     nombre: "PC Gamer AMD",
     imagen: "assets/IMG/productos/computadora5.webp",
     detalles:
@@ -46,6 +51,7 @@ const computadoras = [
     stock: 15,
   },
   {
+    categoria: "computadoras",
     nombre: "PC God Level Intel",
     imagen: "assets/IMG/productos/computadora6.webp",
     detalles:
@@ -58,6 +64,7 @@ const computadoras = [
 
 const teclados = [
   {
+    categoria: "teclados",
     nombre: "Teclado Gamer Good Game",
     imagen: "assets/IMG/productos/teclado1.webp",
     detalles: "Teclado 80% Rainbow Blue Switch Esp Negro Español Latinoamérica",
@@ -66,6 +73,7 @@ const teclados = [
     stock: 250,
   },
   {
+    categoria: "teclados",
     nombre: "Teclado Hyperx",
     imagen: "assets/IMG/productos/teclado2.webp",
     detalles: "Teclado Mecanico 60% Gamer Edicion Arena RGB - Color rosa",
@@ -74,6 +82,7 @@ const teclados = [
     stock: 24,
   },
   {
+    categoria: "teclados",
     nombre: "Teclado Mecánico T-dagger",
     imagen: "assets/IMG/productos/teclado3.webp",
     detalles: "Mecanico Gamer 60% T-dagger Arena Azul Rgb Brown",
@@ -82,6 +91,7 @@ const teclados = [
     stock: 60,
   },
   {
+    categoria: "teclados",
     nombre: "Teclado Mecánico Marvo",
     imagen: "assets/IMG/productos/teclado4.webp",
     detalles: "Kg962 60% Switch Red Rainbow Negro Inglés",
@@ -90,6 +100,7 @@ const teclados = [
     stock: 24,
   },
   {
+    categoria: "teclados",
     nombre: "Teclado Redragon Dragonborn",
     imagen: "assets/IMG/productos/teclado5.webp",
     detalles:
@@ -99,6 +110,7 @@ const teclados = [
     stock: 315,
   },
   {
+    categoria: "teclados",
     nombre: "Teclado Gamer Mecanico Redragon Mitra K551rgb Español Rgb",
     imagen: "assets/IMG/productos/teclado6.webp",
     detalles:
@@ -111,6 +123,7 @@ const teclados = [
 
 const mouse = [
   {
+    categoria: "mouse",
     nombre: "Mouse Gamer Noga Retroiluminado 2400 Dpi Usb Storme",
     imagen: "assets/IMG/productos/mouse1.webp",
     detalles: "Mouse Gamer con Retroiluminación LED multicolor.",
@@ -119,6 +132,7 @@ const mouse = [
     stock: 790,
   },
   {
+    categoria: "mouse",
     nombre: "Mouse inalámbrico Logitech M280",
     imagen: "assets/IMG/productos/mouse2.webp",
     detalles:
@@ -128,6 +142,7 @@ const mouse = [
     stock: 90,
   },
   {
+    categoria: "mouse",
     nombre: "Mouse inalambrico Recargable 2.4g Portatil Bluetooth Luz Led",
     imagen: "assets/IMG/productos/mouse3.webp",
     detalles: "Mouse Inalámbrico Bluetooth 800 / 1200 / 1600 DPI con Luz LED",
@@ -136,6 +151,7 @@ const mouse = [
     stock: 97,
   },
   {
+    categoria: "mouse",
     nombre: "Mouse Xinua M8 Gamer Recargable Luz Rgb 6 Botones",
     imagen: "assets/IMG/productos/mouse4.webp",
     detalles:
@@ -145,6 +161,7 @@ const mouse = [
     stock: 45,
   },
   {
+    categoria: "mouse",
     nombre: "Mouse gamer Logitech G Series Lightsync G203 negro",
     imagen: "assets/IMG/productos/mouse5.webp",
     detalles:
@@ -154,6 +171,7 @@ const mouse = [
     stock: 15,
   },
   {
+    categoria: "mouse",
     nombre: "Mouse Logitech Master Series MX Master 3 grafito",
     imagen: "assets/IMG/productos/mouse6.webp",
     detalles:
@@ -166,6 +184,7 @@ const mouse = [
 
 const notebooks = [
   {
+    categoria: "notebooks",
     nombre: "HP 15s-fq2171ns",
     imagen: "ruta/a/imagen_hp_15s_fq2171ns.webp",
     detalles:
@@ -175,6 +194,7 @@ const notebooks = [
     stock: 50,
   },
   {
+    categoria: "notebooks",
     nombre: "HP Victus 16-e0085ns",
     imagen: "ruta/a/imagen_hp_victus_16_e0085ns.webp",
     detalles:
@@ -184,6 +204,7 @@ const notebooks = [
     stock: 40,
   },
   {
+    categoria: "notebooks",
     nombre: "Acer Nitro 5",
     imagen: "ruta/a/imagen_acer_nitro_5.webp",
     detalles:
@@ -193,6 +214,7 @@ const notebooks = [
     stock: 35,
   },
   {
+    categoria: "notebooks",
     nombre: "MSI Modern 14 B11MOU-1063XES",
     imagen: "ruta/a/imagen_msi_modern_14.webp",
     detalles:
@@ -202,6 +224,7 @@ const notebooks = [
     stock: 25,
   },
   {
+    categoria: "notebooks",
     nombre: "Lenovo IdeaPad Gaming 3 Gen 6",
     imagen: "ruta/a/imagen_lenovo_ideapad_gaming_3_gen_6.webp",
     detalles:
@@ -211,6 +234,7 @@ const notebooks = [
     stock: 20,
   },
   {
+    categoria: "notebooks",
     nombre: "ASUS TUF Gaming F15 FX506LHB",
     imagen: "ruta/a/imagen_asus_tuf_gaming_f15.webp",
     detalles:
@@ -235,27 +259,6 @@ window.onload = function () {
   mostrarProductos(notebooks, mostrarNotebooks);
 };
 
-//carrito
-const btnMostrarCarrito = document.querySelector(".carrito-img");
-const ventanaModal = document.querySelector("#carrito-modal");
-const btnCerrar = document.querySelector("#cerrarCarrito");
-
-//mostar carrito
-btnMostrarCarrito.addEventListener("click", function () {
-  if (ventanaModal.style.visibility === "visible") {
-    ventanaModal.style.visibility = "hidden";
-  } else {
-    ventanaModal.style.visibility = "visible";
-  }
-});
-
-//cerrar carrito
-btnCerrar.addEventListener("click", function () {
-  if (ventanaModal.style.visibility === "visible") {
-    ventanaModal.style.visibility = "hidden";
-  }
-  console.log("boton cerrar");
-});
 
 //funcion principal para mostrar los productos en el div
 function mostrarProductos(productos, contenedor) {
@@ -293,7 +296,7 @@ function mostrarProductos(productos, contenedor) {
     divInfo.appendChild(stock);
 
     div.appendChild(divInfo);
-    
+
     let btnDetalles = document.createElement("button");
     btnDetalles.textContent = "Detalles";
     btnDetalles.classList.add("btnDetalles");
@@ -315,6 +318,7 @@ function mostrarProductos(productos, contenedor) {
 function mostrarDetalles(producto) {
   let modal = document.getElementById("modal");
   let title = document.getElementById("modal-title");
+  let category = document.getElementById("modal-category");
   let image = document.getElementById("modal-image");
   let description = document.getElementById("modal-description");
   let price = document.getElementById("modal-price");
@@ -322,15 +326,15 @@ function mostrarDetalles(producto) {
 
   // Actualizar contenido del modal
   title.textContent = producto.nombre;
+  category.textContent = producto.categoria;
   image.src = producto.imagen;
   description.textContent = producto.detalles;
-  price.textContent = '$'+ producto.precio;
+  price.textContent = "$" + producto.precio;
   buyButton.textContent = "Comprar";
 
   // Mostrar el modal
-  modal.style.display = "block";
+  modal.style.display = "flex";
 }
-
 
 // cerrar modal
 let closeModal = document.getElementsByClassName("close")[0];
@@ -349,6 +353,29 @@ window.onclick = function (event) {
 //carrito
 
 let carrito = [];
+
+//botones
+const btnMostrarCarrito = document.querySelector(".carrito-img");
+const ventanaModal = document.querySelector("#carrito-modal");
+const btnCerrar = document.querySelector("#cerrarCarrito");
+
+//mostar carrito
+btnMostrarCarrito.addEventListener("click", function () {
+  if (ventanaModal.style.visibility === "visible") {
+    ventanaModal.style.visibility = "hidden";
+  } else {
+    ventanaModal.style.visibility = "visible";
+  }
+});
+
+//cerrar carrito
+btnCerrar.addEventListener("click", function () {
+  if (ventanaModal.style.visibility === "visible") {
+    ventanaModal.style.visibility = "hidden";
+  }
+  console.log("boton cerrar");
+});
+
 
 // detector de eventos
 const detectProducto = document.querySelector(".categorias");
