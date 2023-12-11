@@ -186,7 +186,7 @@ const notebooks = [
   {
     categoria: "notebooks",
     nombre: "HP 15s-fq2171ns",
-    imagen: "ruta/a/imagen_hp_15s_fq2171ns.webp",
+    imagen: "assets/IMG/productos/notebook1.webp",
     detalles:
       'Peso: 1,69 kg, Procesador: Intel Core i3-1115G4, RAM: 8 GB DDR4, Almacenamiento: SSD M.2 de 256 GB, GPU: Intel UHD Graphics, Pantalla: FHD 15,6", Puertos: 3 USB 3.0, 1 HDMI, Batería: 3 celdas Ion de litio 41Wh',
     estrellas: "assets/IMG/estrellas.png",
@@ -196,7 +196,7 @@ const notebooks = [
   {
     categoria: "notebooks",
     nombre: "HP Victus 16-e0085ns",
-    imagen: "ruta/a/imagen_hp_victus_16_e0085ns.webp",
+    imagen: "assets/IMG/productos/notebook2.webp",
     detalles:
       'Dimensiones: 337 x 26 x 2,35 cm, Peso: 2,46 kg, Procesador: AMD Ryzen 5 5600H, RAM: 8GB DDR4-SDRAM, Almacenamiento: 512GB SSD M.2 NVMe PCIe, GPU: NVIDIA GeForce GTX 1650, Pantalla: 16.1" FHD a 144 Hz, Puertos: USB Type-C, USB Type-A, HDMI 2.0, RJ-45, Batería: 4 celdas Ion de litio 70Wh',
     estrellas: "assets/IMG/estrellas.png",
@@ -206,7 +206,7 @@ const notebooks = [
   {
     categoria: "notebooks",
     nombre: "Acer Nitro 5",
-    imagen: "ruta/a/imagen_acer_nitro_5.webp",
+    imagen: "assets/IMG/productos/Acer Nitro 5.webp",
     detalles:
       'Dimensiones: 236,5 x 23,85 x 1,97 cm, Peso: 1,67 kg, Procesador: AMD Ryzen 5 5500U, RAM: 16 GB DDR4, Almacenamiento: 1 TB SSD, GPU: AMD Radeon Graphics, Pantalla: 15.6" FullHD IPS, Puertos: HDMI, USB 2.0, USB 3.0, Ethernet, Audio jack, Lector de Tarjetas, Batería: 55Wh Ion de litio',
     estrellas: "assets/IMG/estrellas.png",
@@ -216,7 +216,7 @@ const notebooks = [
   {
     categoria: "notebooks",
     nombre: "MSI Modern 14 B11MOU-1063XES",
-    imagen: "ruta/a/imagen_msi_modern_14.webp",
+    imagen: "assets/IMG/productos/MSI Modern 14 B11MOU-1063XES.webp",
     detalles:
       'Dimensiones: 319 x 220.2 x 16.9 mm, Peso: 1,29 kg, Procesador: Intel Core i7-1255U, RAM: 16 GB, Almacenamiento: 512GB SSD, GPU: UHD Graphics, Pantalla: 14" FHD IPS-Level, Puertos: USB Type-C, USB Type-A, HDMI, Lector de tarjetas Micro SD, Batería: 4 celdas Ion de litio 50 Whr',
     estrellas: "assets/IMG/estrellas.png",
@@ -226,7 +226,7 @@ const notebooks = [
   {
     categoria: "notebooks",
     nombre: "Lenovo IdeaPad Gaming 3 Gen 6",
-    imagen: "ruta/a/imagen_lenovo_ideapad_gaming_3_gen_6.webp",
+    imagen: "assets/IMG/productoS/Lenovo IdeaPad Gaming 3 Gen 6.webp",
     detalles:
       'Dimensiones: 359.6 x 251.9 x 24.2 mm, Peso: 2,2 kg, Procesador: AMD Ryzen 7 5800H, RAM: 16GB, Almacenamiento: 512 SSD M.2 PCIe NVMe, GPU: NVIDIA GeForce RTX 3050, Pantalla: 15,6" FHD, Puertos: USB 3.2 Gen 1, USB-C, HDMI 2.0, Ethernet, Audio jack, Batería: Integrada 45Wh',
     estrellas: "assets/IMG/estrellas.png",
@@ -236,7 +236,7 @@ const notebooks = [
   {
     categoria: "notebooks",
     nombre: "ASUS TUF Gaming F15 FX506LHB",
-    imagen: "ruta/a/imagen_asus_tuf_gaming_f15.webp",
+    imagen: "assets/IMG/productos/ASUS TUF Gaming.webp",
     detalles:
       "Dimensiones: 360 x 262 x 25 ~ 26mm, Peso: 2,2 Kg, Procesador: Intel Core i5-10300H, RAM: 16 GB, Almacenamiento: 512GB SSD M.2 NVMe PCIe 3.0, GPU: NVIDIA GeForce GTX 1650, Pantalla: 15.6 FHD 144Hz, Puertos: USB 2.0, USB 3.0, USB Type- C, HDMI, Ethernet, Audio jack, Batería: 3 celdas Ion de litio 48 Wh",
     estrellas: "assets/IMG/estrellas.png",
