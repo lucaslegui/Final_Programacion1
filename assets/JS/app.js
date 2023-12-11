@@ -259,7 +259,6 @@ window.onload = function () {
   mostrarProductos(notebooks, mostrarNotebooks);
 };
 
-
 //funcion principal para mostrar los productos en el div
 function mostrarProductos(productos, contenedor) {
   //cambiar color y texto cuando el boton esta activo
@@ -376,11 +375,10 @@ btnCerrar.addEventListener("click", function () {
   console.log("boton cerrar");
 });
 
-
 // detector de eventos
-const detectProducto = document.querySelector(".categorias");
+// const detectProducto = document.querySelector(".categorias");
 
-detectProducto.addEventListener("click", function (e) {
+document.addEventListener("click", function (e) {
   if (e.target && e.target.classList.contains("btnAgregar")) {
     const producto = e.target.parentElement;
 
