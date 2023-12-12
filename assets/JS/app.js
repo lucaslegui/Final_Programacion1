@@ -507,6 +507,7 @@ function actualizarCarrito() {
     //sumar el precio total, convertir el string a number
     total += parseFloat(producto.precio.slice(1)) * producto.cantidad;
   });
+  
   //crando el elemento total en el carrito
   let filaTotal = document.createElement("tr");
 
