@@ -190,7 +190,7 @@ const notebooks = [
     detalles:
       'Peso: 1,69 kg, Procesador: Intel Core i3-1115G4, RAM: 8 GB DDR4, Almacenamiento: SSD M.2 de 256 GB, GPU: Intel UHD Graphics, Pantalla: FHD 15,6", Puertos: 3 USB 3.0, 1 HDMI, Batería: 3 celdas Ion de litio 41Wh',
     estrellas: "assets/IMG/estrellas.png",
-    precio: 399.99,
+    precio: 399999.99,
     stock: 50,
   },
   {
@@ -200,7 +200,7 @@ const notebooks = [
     detalles:
       'Dimensiones: 337 x 26 x 2,35 cm, Peso: 2,46 kg, Procesador: AMD Ryzen 5 5600H, RAM: 8GB DDR4-SDRAM, Almacenamiento: 512GB SSD M.2 NVMe PCIe, GPU: NVIDIA GeForce GTX 1650, Pantalla: 16.1" FHD a 144 Hz, Puertos: USB Type-C, USB Type-A, HDMI 2.0, RJ-45, Batería: 4 celdas Ion de litio 70Wh',
     estrellas: "assets/IMG/estrellas.png",
-    precio: 799,
+    precio: 799999,
     stock: 40,
   },
   {
@@ -210,7 +210,7 @@ const notebooks = [
     detalles:
       'Dimensiones: 236,5 x 23,85 x 1,97 cm, Peso: 1,67 kg, Procesador: AMD Ryzen 5 5500U, RAM: 16 GB DDR4, Almacenamiento: 1 TB SSD, GPU: AMD Radeon Graphics, Pantalla: 15.6" FullHD IPS, Puertos: HDMI, USB 2.0, USB 3.0, Ethernet, Audio jack, Lector de Tarjetas, Batería: 55Wh Ion de litio',
     estrellas: "assets/IMG/estrellas.png",
-    precio: 714.91,
+    precio: 714000,
     stock: 35,
   },
   {
@@ -220,7 +220,7 @@ const notebooks = [
     detalles:
       'Dimensiones: 319 x 220.2 x 16.9 mm, Peso: 1,29 kg, Procesador: Intel Core i7-1255U, RAM: 16 GB, Almacenamiento: 512GB SSD, GPU: UHD Graphics, Pantalla: 14" FHD IPS-Level, Puertos: USB Type-C, USB Type-A, HDMI, Lector de tarjetas Micro SD, Batería: 4 celdas Ion de litio 50 Whr',
     estrellas: "assets/IMG/estrellas.png",
-    precio: 789,
+    precio: 789000,
     stock: 25,
   },
   {
@@ -230,7 +230,7 @@ const notebooks = [
     detalles:
       'Dimensiones: 359.6 x 251.9 x 24.2 mm, Peso: 2,2 kg, Procesador: AMD Ryzen 7 5800H, RAM: 16GB, Almacenamiento: 512 SSD M.2 PCIe NVMe, GPU: NVIDIA GeForce RTX 3050, Pantalla: 15,6" FHD, Puertos: USB 3.2 Gen 1, USB-C, HDMI 2.0, Ethernet, Audio jack, Batería: Integrada 45Wh',
     estrellas: "assets/IMG/estrellas.png",
-    precio: 1108.4,
+    precio: 1108000,
     stock: 20,
   },
   {
@@ -240,7 +240,7 @@ const notebooks = [
     detalles:
       "Dimensiones: 360 x 262 x 25 ~ 26mm, Peso: 2,2 Kg, Procesador: Intel Core i5-10300H, RAM: 16 GB, Almacenamiento: 512GB SSD M.2 NVMe PCIe 3.0, GPU: NVIDIA GeForce GTX 1650, Pantalla: 15.6 FHD 144Hz, Puertos: USB 2.0, USB 3.0, USB Type- C, HDMI, Ethernet, Audio jack, Batería: 3 celdas Ion de litio 48 Wh",
     estrellas: "assets/IMG/estrellas.png",
-    precio: 799,
+    precio: 980000,
     stock: 15,
   },
 ];
@@ -330,10 +330,45 @@ function mostrarDetalles(producto) {
   description.textContent = producto.detalles;
   price.textContent = "$" + producto.precio;
   buyButton.textContent = "Comprar";
-
-  // Mostrar el modal
+  buyButton.producto = producto;
+  // mostrar el modal
   modal.style.display = "flex";
 }
+
+//boton comprar
+document
+  .getElementById("modal-comprar-button")
+  .addEventListener("click", function (e) {
+    const producto = e.target.producto;
+
+    const productoAgregado = {
+      cantidad: 1,
+      nombre: producto.nombre,
+      precio: "$" + producto.precio,
+    };
+
+    //saber si un producto ya esta en el carrito
+    const productoEnCarrito = carrito.some(
+      (producto) => producto.nombre === productoAgregado.nombre
+    );
+
+    if (productoEnCarrito) {
+      const productos = carrito.map((producto) => {
+        if (producto.nombre === productoAgregado.nombre) {
+          producto.cantidad++;
+          return producto;
+        } else {
+          return producto;
+        }
+      });
+      carrito = [...productos];
+    } else {
+      carrito = [...carrito, productoAgregado];
+    }
+    showToast("Producto agregado al carrito");
+    actualizarCarrito();
+  });
+
 
 // cerrar modal
 let closeModal = document.getElementsByClassName("close")[0];
@@ -349,7 +384,34 @@ window.onclick = function (event) {
   }
 };
 
-//carrito
+///////////////////////// MENSAJE DE AGREGADO AL CARRITO /////////////////////////
+
+function showToast(message) {
+  
+  const toast = document.createElement("div");
+  toast.textContent = message;
+  toast.classList.add("toast");
+
+  // Añadir el toast al cuerpo del documento
+  document.body.appendChild(toast);
+
+  // Mostrar el toast
+  setTimeout(() => {
+    toast.classList.add("toast-show");
+  }, 100); // Un pequeño retraso para la animación
+
+  // Ocultar y eliminar el toast después de un tiempo
+  setTimeout(() => {
+    toast.classList.remove("toast-show");
+    setTimeout(() => {
+      document.body.removeChild(toast);
+    }, 500); 
+  }, 3000); 
+}
+
+
+
+///////////////////////// CARRITO /////////////////////////
 
 let carrito = [];
 
@@ -376,7 +438,6 @@ btnCerrar.addEventListener("click", function () {
 });
 
 // detector de eventos
-// const detectProducto = document.querySelector(".categorias");
 
 document.addEventListener("click", function (e) {
   if (e.target && e.target.classList.contains("btnAgregar")) {
@@ -406,6 +467,7 @@ document.addEventListener("click", function (e) {
     } else {
       carrito = [...carrito, productoAgregado];
     }
+    showToast("Producto agregado al carrito");
 
     actualizarCarrito();
   }
@@ -459,7 +521,7 @@ function actualizarCarrito() {
   contenedorProductos.appendChild(filaTotal);
 }
 
-// Agregar detector de eventos para los botones de eliminar
+// detector de eventos para los botones de eliminar
 document
   .querySelector("#lista-carrito tbody")
   .addEventListener("click", function (e) {
