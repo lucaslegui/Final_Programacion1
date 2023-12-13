@@ -7,7 +7,6 @@
   scroll-behavior: smooth;
 }
 
-
 body {
   font-family: 'poppins', sans-serif;
   font-size: 16px;
@@ -16,7 +15,6 @@ body {
   background-image: url(../IMG/bg.jpg);
   background-size: auto;
 }
-
 
 ul li a {
   text-decoration: none;
@@ -76,7 +74,7 @@ h3 {
 }
 
 .container {
-  width: 90%;
+  /* width: 90%; */
   max-width: 1200px;
   margin: 0 auto;
   padding: 60px 0;
@@ -270,7 +268,8 @@ main {
   opacity: 0;
   transition: opacity 0.5s ease;
   animation: rainbowBackground 3s linear infinite;
-  border: 1px solid white; /* Opcional para resaltar */
+  border: 1px solid white;
+  /* Opcional para resaltar */
 }
 
 .toast-show {
@@ -278,14 +277,26 @@ main {
 }
 
 @keyframes rainbowBackground {
-  0% {background-color: red;}
-  20% {background-color: green;}
-  40% {background-color: blue;}
-  60% {background-color: purple;}
-  100% {background-color: orange;}
+  0% {
+    background-color: red;
+  }
+
+  20% {
+    background-color: green;
+  }
+
+  40% {
+    background-color: blue;
+  }
+
+  60% {
+    background-color: purple;
+  }
+
+  100% {
+    background-color: orange;
+  }
 }
-
-
 
 .boton {
   background-color: #ff2e63;
@@ -323,25 +334,30 @@ main {
 #mostrandoNotebooks,
 #mostrandoTeclados,
 #mostrandoMouse {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+
 }
 
-
 .card {
+  max-width: 350px;
+  height: auto;
   background-color: #ffffff;
   padding: 20px;
   border-radius: 5px;
-  transition: all .3s ease;
+  position: relative;
+  /* transition: all .3s ease; */
 }
 
 .card>img {
   display: block;
   margin: 0 auto;
-  max-width: 100%;
-  max-height: 300px;
+  width: 350px;
+  height: 300px;
   border-radius: 5px;
+  object-fit:contain;
 }
 
 .card:hover {
@@ -361,11 +377,12 @@ main {
   color: #181818;
 }
 
-.card .btnAgregar,
+.btnAgregar,
 .btnDetalles {
   display: block;
   width: 100%;
   margin: 10px auto;
+  /* position: absolute; */
 }
 
 .btnAgregar {
@@ -399,6 +416,7 @@ main {
 
 .banner {
   display: flex;
+  max-width: 100%;
   height: 120px;
   justify-content: start;
   align-items: center;
@@ -408,35 +426,31 @@ main {
   margin-bottom: 20px;
 }
 
+.banner{
+  background-size: cover;
+  background-position: center
+}
+
 .banner.computadoras {
   background-image: url(../IMG/bannerCompu.webp);
-  background-size: cover;
-  background-position: center;
 }
 
 .banner.notebooks {
   background-image: url(../IMG/bannerNotebook.webp);
-  background-size: cover;
-  background-position: center;
 }
 
 .banner.teclados {
   background-image: url(../IMG/bannerTeclados.webp);
-  background-size: cover;
-  background-position: center;
 }
 
 .banner.mouse {
   background-image: url(../IMG/bannerMouse.webp);
-  background-size: cover;
-  background-position: center;
 }
 
 .tituloSeccion {
-  font-size: 3.5rem;
+  font-size: 3rem;
   text-shadow: 2px 2px 4px #000000;
 }
-
 
 /* boton eliminar del carrito */
 
@@ -449,7 +463,6 @@ main {
   padding: 10px 20px;
   border-radius: 5px;
 }
-
 
 .btnEliminar:hover {
   box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
@@ -546,12 +559,12 @@ main {
   margin: 10px;
 }
 
-/* button comprar */
+/* boton comprar */
 .modal-info .comprar {
   width: 100%;
   height: 38px;
   padding: 0 30px;
-  color: #555;
+  color: #242424;
   text-align: center;
   font-size: 11px;
   font-weight: 600;
@@ -561,8 +574,8 @@ main {
   text-decoration: none;
   white-space: nowrap;
   background-color: transparent;
-  border-radius: 4px;
-  border: 1px solid #bbb;
+  border-radius: 8px;
+  border: 3px solid #bbb;
   cursor: pointer;
   box-sizing: border-box;
 }
@@ -660,7 +673,7 @@ main {
       .detalles {
         font-size: 13px;
         margin: 5px;
-        
+
       }
 
       .precio {
@@ -674,15 +687,21 @@ main {
 
 /*    FOOTER    */
 
-footer {
-  background-color: #ff2e63;
-  color: white;
+/* footer {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); 
   padding: 20px;
-  text-align: center;
-}
+  align-items: start;
+} */
 
-footer .col-1 img {
-  width: 90px;
-  /* display: block; */
+/* Estilos para los elementos internos, como ajustes de margen y padding */
+/* footer h4, footer p, footer .enlace, footer a {
+  margin: 5px 0;
+  padding: 0;
+} */
+
+.col-1 img {
+  width: 10px;
+  height: auto;
   margin-bottom: 20px;
 }
