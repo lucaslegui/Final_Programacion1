@@ -534,10 +534,25 @@ document
   });
 
 // vaciar carrito
-
 document
   .querySelector("#vaciar-carrito")
   .addEventListener("click", function () {
     carrito = []; // vuelve el arrray a default
     actualizarCarrito(); // actualiza el carrito
   });
+
+
+// mostrar icono carrito en el main
+document.addEventListener('DOMContentLoaded', () => {
+  const carrito = document.querySelector('.carrito');
+  const mainElement = document.querySelector('main');
+  const mainElementOffset = mainElement.getBoundingClientRect().top + window.scrollY;
+
+  window.addEventListener('scroll', () => {
+    if (window.scrollY >= mainElementOffset) {
+      carrito.style.display = 'block';
+    } else {
+      carrito.style.display = 'none';
+    }
+  });
+});
