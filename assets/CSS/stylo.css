@@ -719,3 +719,51 @@ footer {
     margin-left: 10px;
   }
 }
+
+/*                   FILTRO                   */
+
+.filtros {
+  background-color: #0f0f1f;
+  color: #fff;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.filtro {
+  border: 2px solid #32d3eb;
+  background-color: #1a1a2e; 
+  border-radius: 5px;
+  padding: 15px;
+  box-shadow: 0px 0px 15px #32d3eb;
+}
+
+.filtro h3 {
+  color: #e94560;
+  margin-bottom: 10px;
+}
+
+.filtro select {
+  width: 100%;
+  padding: 10px;
+  background-color: #16213e;
+  color: #fff;
+  border: 1px solid #32d3eb;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.filtro select:hover,
+.filtro select:focus {
+  background-color: #0f3460;
+  outline: none;
+  box-shadow: 0 0 10px #32d3eb;
+}
+
+option {
+  background-color: #16213e;
+  color: white;
+}

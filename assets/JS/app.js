@@ -313,6 +313,51 @@ function mostrarProductos(productos, contenedor) {
   }
 }
 
+/////////////// FILTRO DE PRODUCTOS ///////////////////////
+
+document.getElementById('categorias').addEventListener('change', function() {
+  filtrarProductos(this.value);
+});
+
+function mostrarOcultarArticulos(categoria) {
+  const todasLasCategorias = ['computadoras', 'notebooks', 'teclados', 'mouse'];
+  
+  todasLasCategorias.forEach(cat => {
+      document.getElementById(cat).style.display = (categoria === cat || categoria === '') ? 'block' : 'none';
+  });
+}
+
+function filtrarProductos(categoria) {
+  limpiarContenedores();
+  mostrarOcultarArticulos(categoria);
+
+  if (categoria === 'computadoras') {
+      mostrarProductos(computadoras, mostrarComputadoras);
+  } else if (categoria === 'notebooks') {
+      mostrarProductos(notebooks, mostrarNotebooks);
+  } else if (categoria === 'teclados') {
+      mostrarProductos(teclados, mostrarTeclados);
+  } else if (categoria === 'mouse') {
+      mostrarProductos(mouse, mostrarMouse);
+  } else {
+      // mostrar todas las categorias
+      mostrarProductos(computadoras, mostrarComputadoras);
+      mostrarProductos(notebooks, mostrarNotebooks);
+      mostrarProductos(teclados, mostrarTeclados);
+      mostrarProductos(mouse, mostrarMouse);
+  }
+}
+
+// limpiar los contenedores de productos
+function limpiarContenedores() {
+  mostrarComputadoras.innerHTML = '';
+  mostrarNotebooks.innerHTML = '';
+  mostrarTeclados.innerHTML = '';
+  mostrarMouse.innerHTML = '';
+}
+
+///////////////////////////////////////////////////////////
+
 // Modal
 function mostrarDetalles(producto) {
   let modal = document.getElementById("modal");
