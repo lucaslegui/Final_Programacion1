@@ -346,6 +346,7 @@ function filtrarProductos(categoria) {
       mostrarProductos(teclados, mostrarTeclados);
       mostrarProductos(mouse, mostrarMouse);
   }
+  mostrarOferta(categoria); //mostrar el banner de oferta
 }
 
 // limpiar los contenedores de productos
@@ -355,6 +356,7 @@ function limpiarContenedores() {
   mostrarTeclados.innerHTML = '';
   mostrarMouse.innerHTML = '';
 }
+
 
 ///////////////////////////////////////////////////////////
 

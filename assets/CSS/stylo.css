@@ -767,3 +767,14 @@ option {
   background-color: #16213e;
   color: white;
 }
+
+/*           OFERTAS          */
+
+.oferta-especial {
+  position: fixed;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: none;
+  z-index: 1000;
+}
