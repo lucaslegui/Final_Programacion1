@@ -7,15 +7,23 @@ function mostrarOferta(categoria) {
     document.body.appendChild(ofertaEspecial);
     ofertaEspecial.innerHTML = "";
   
-    // agregar la imagen correspondiente a la categoria
+    // agregar la imagen a la categoria
     const imagen = document.createElement("img");
     imagen.src = `assets/IMG/ofertas/banner-${categoria}.gif`; 
     ofertaEspecial.appendChild(imagen);
   
     ofertaEspecial.style.display = "block";
-  
-    // Ocultar el banner despues de 10 segundos
+
+    const botonCerrar = document.createElement("button");
+    botonCerrar.textContent = "X";
+    botonCerrar.classList.add("boton-cerrar-oferta");
+    ofertaEspecial.appendChild(botonCerrar);
+
+    botonCerrar.onclick = function() {
+        ofertaEspecial.style.display = "none";
+    };
+
     setTimeout(() => {
       ofertaEspecial.style.display = "none";
-    }, 8000);
+    }, 9000);
   }
