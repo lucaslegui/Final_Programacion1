@@ -245,6 +245,21 @@ const notebooks = [
   },
 ];
 
+
+//menu hamburguesa
+
+document.addEventListener('DOMContentLoaded', function() {
+  const menuToggle = document.createElement('span');
+  menuToggle.classList.add('menu-toggle');
+  menuToggle.innerHTML = '&#9776;';
+  document.querySelector('.navbar').appendChild(menuToggle);
+
+  menuToggle.addEventListener('click', function() {
+      document.querySelector('.navbar ul').classList.toggle('active');
+  });
+});
+
+
 //declaracion
 const mostrarComputadoras = document.querySelector("#mostrandoComputadoras");
 const mostrarNotebooks = document.querySelector("#mostrandoNotebooks");
