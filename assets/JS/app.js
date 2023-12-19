@@ -245,20 +245,17 @@ const notebooks = [
   },
 ];
 
-
 //menu hamburguesa
+document.addEventListener("DOMContentLoaded", function () {
+  const menuToggle = document.createElement("span");
+  menuToggle.classList.add("menu-toggle");
+  menuToggle.innerHTML = "&#9776;";
+  document.querySelector(".navbar").appendChild(menuToggle);
 
-document.addEventListener('DOMContentLoaded', function() {
-  const menuToggle = document.createElement('span');
-  menuToggle.classList.add('menu-toggle');
-  menuToggle.innerHTML = '&#9776;';
-  document.querySelector('.navbar').appendChild(menuToggle);
-
-  menuToggle.addEventListener('click', function() {
-      document.querySelector('.navbar ul').classList.toggle('active');
+  menuToggle.addEventListener("click", function () {
+    document.querySelector(".navbar ul").classList.toggle("active");
   });
 });
-
 
 //declaracion
 const mostrarComputadoras = document.querySelector("#mostrandoComputadoras");
@@ -276,7 +273,7 @@ window.onload = function () {
 
 //funcion principal para mostrar los productos en el div
 function mostrarProductos(productos, contenedor) {
-  //cambiar color y texto cuando el boton esta activo
+
 
   for (const producto of productos) {
     //cargar productos
@@ -330,15 +327,16 @@ function mostrarProductos(productos, contenedor) {
 
 /////////////// FILTRO DE PRODUCTOS ///////////////////////
 
-document.getElementById('categorias').addEventListener('change', function() {
+document.getElementById("categorias").addEventListener("change", function () {
   filtrarProductos(this.value);
 });
 
 function mostrarOcultarArticulos(categoria) {
-  const todasLasCategorias = ['computadoras', 'notebooks', 'teclados', 'mouse'];
-  
-  todasLasCategorias.forEach(cat => {
-      document.getElementById(cat).style.display = (categoria === cat || categoria === '') ? 'block' : 'none';
+  const todasLasCategorias = ["computadoras", "notebooks", "teclados", "mouse"];
+
+  todasLasCategorias.forEach((cat) => {
+    document.getElementById(cat).style.display =
+      categoria === cat || categoria === "" ? "block" : "none";
   });
 }
 
@@ -346,32 +344,31 @@ function filtrarProductos(categoria) {
   limpiarContenedores();
   mostrarOcultarArticulos(categoria);
 
-  if (categoria === 'computadoras') {
-      mostrarProductos(computadoras, mostrarComputadoras);
-  } else if (categoria === 'notebooks') {
-      mostrarProductos(notebooks, mostrarNotebooks);
-  } else if (categoria === 'teclados') {
-      mostrarProductos(teclados, mostrarTeclados);
-  } else if (categoria === 'mouse') {
-      mostrarProductos(mouse, mostrarMouse);
+  if (categoria === "computadoras") {
+    mostrarProductos(computadoras, mostrarComputadoras);
+  } else if (categoria === "notebooks") {
+    mostrarProductos(notebooks, mostrarNotebooks);
+  } else if (categoria === "teclados") {
+    mostrarProductos(teclados, mostrarTeclados);
+  } else if (categoria === "mouse") {
+    mostrarProductos(mouse, mostrarMouse);
   } else {
-      // mostrar todas las categorias
-      mostrarProductos(computadoras, mostrarComputadoras);
-      mostrarProductos(notebooks, mostrarNotebooks);
-      mostrarProductos(teclados, mostrarTeclados);
-      mostrarProductos(mouse, mostrarMouse);
+    // mostrar todas las categorias
+    mostrarProductos(computadoras, mostrarComputadoras);
+    mostrarProductos(notebooks, mostrarNotebooks);
+    mostrarProductos(teclados, mostrarTeclados);
+    mostrarProductos(mouse, mostrarMouse);
   }
   mostrarOferta(categoria); //mostrar el banner de oferta
 }
 
 // limpiar los contenedores de productos
 function limpiarContenedores() {
-  mostrarComputadoras.innerHTML = '';
-  mostrarNotebooks.innerHTML = '';
-  mostrarTeclados.innerHTML = '';
-  mostrarMouse.innerHTML = '';
+  mostrarComputadoras.innerHTML = "";
+  mostrarNotebooks.innerHTML = "";
+  mostrarTeclados.innerHTML = "";
+  mostrarMouse.innerHTML = "";
 }
-
 
 ///////////////////////////////////////////////////////////
 
@@ -431,7 +428,6 @@ document
     actualizarCarrito();
   });
 
-
 // cerrar modal
 let closeModal = document.getElementsByClassName("close")[0];
 closeModal.onclick = function () {
@@ -449,7 +445,6 @@ window.onclick = function (event) {
 ///////////////////////// MENSAJE DE AGREGADO AL CARRITO /////////////////////////
 
 function showToast(message) {
-  
   const toast = document.createElement("div");
   toast.textContent = message;
   toast.classList.add("toast");
@@ -460,18 +455,15 @@ function showToast(message) {
   // Mostrar el toast
   setTimeout(() => {
     toast.classList.add("toast-show");
-  }, 100); // Un pequeño retraso para la animación
+  }, 100);
 
-  // Ocultar y eliminar el toast después de un tiempo
   setTimeout(() => {
     toast.classList.remove("toast-show");
     setTimeout(() => {
       document.body.removeChild(toast);
-    }, 500); 
-  }, 3000); 
+    }, 500);
+  }, 3000);
 }
-
-
 
 ///////////////////////// CARRITO /////////////////////////
 
@@ -537,7 +529,7 @@ document.addEventListener("click", function (e) {
 
 function actualizarCarrito() {
   const contenedorProductos = document.querySelector("#lista-carrito tbody");
-  contenedorProductos.innerHTML = ""; // solo uso innerHTML para borrar el contenido del tbody.
+  contenedorProductos.innerHTML = ""; //borrar el contenido del tbody.
   let total = 0;
 
   carrito.forEach((producto, index) => {
@@ -555,12 +547,12 @@ function actualizarCarrito() {
     celdaCantidad.textContent = producto.cantidad;
     fila.appendChild(celdaCantidad);
 
-    // Crear celda para el botón eliminar
+    // Crear celda para el boton eliminar
     let celdaEliminar = document.createElement("td");
     let botonEliminar = document.createElement("button");
-    botonEliminar.textContent = "X"; // Utiliza el texto 'X' para representar una cruz
+    botonEliminar.textContent = "X";
     botonEliminar.classList.add("btnEliminar");
-    botonEliminar.dataset.id = index; // Almacenar el índice del producto en el carrito como un atributo de datos
+    botonEliminar.dataset.id = index;
     celdaEliminar.appendChild(botonEliminar);
     fila.appendChild(celdaEliminar);
 
@@ -569,7 +561,7 @@ function actualizarCarrito() {
     //sumar el precio total, convertir el string a number
     total += parseFloat(producto.precio.slice(1)) * producto.cantidad;
   });
-  
+
   //crando el elemento total en el carrito
   let filaTotal = document.createElement("tr");
 
@@ -603,18 +595,108 @@ document
     actualizarCarrito(); // actualiza el carrito
   });
 
-
 // mostrar icono carrito en el main
-document.addEventListener('DOMContentLoaded', () => {
-  const carrito = document.querySelector('.carrito');
-  const mainElement = document.querySelector('main');
-  const mainElementOffset = mainElement.getBoundingClientRect().top + window.scrollY;
+document.addEventListener("DOMContentLoaded", () => {
+  const carrito = document.querySelector(".carrito");
+  const mainElement = document.querySelector("main");
+  const mainElementOffset =
+    mainElement.getBoundingClientRect().top + window.scrollY;
 
-  window.addEventListener('scroll', () => {
+  window.addEventListener("scroll", () => {
     if (window.scrollY >= mainElementOffset) {
-      carrito.style.display = 'block';
+      carrito.style.display = "block";
     } else {
-      carrito.style.display = 'none';
+      carrito.style.display = "none";
     }
   });
 });
+
+///////////////////////// COMPRAR CARRITO /////////////////////////
+
+// Evento para abrir el modal de pago "COMPRAR CARRITO"
+document
+  .getElementById("comprar-carrito")
+  .addEventListener("click", function () {
+    abrirModalPago();
+  });
+
+function abrirModalPago() {
+  const modalPago = document.createElement("div");
+  modalPago.id = "modal-pago";
+  modalPago.innerHTML = `
+      <div class="modal-pago-contenido">
+          <span class="close-modal-pago">&times;</span>
+          <div class="modal-pago-izquierda">
+              <form id="formulario-pago">
+                  <h2>Detalles de Pago</h2>
+                  <input type="text" placeholder="Nombre" required>
+                  <input type="text" placeholder="Apellido" required>
+                  <input type="text" placeholder="Dirección" required>
+                  <input type="text" placeholder="Código Postal" required>
+                  <input type="number" placeholder="Teléfono" required>
+                  <input type="number" placeholder="Número de Tarjeta de Crédito" required>
+                  <button type="submit" id="confirm">Confirmar Pago</button>
+              </form>
+          </div>
+          <div class="modal-pago-derecha">
+              <h2>Resumen del Carrito</h2>
+              <div id="resumen-carrito"></div>
+          </div>
+      </div>
+  `;
+  document.body.appendChild(modalPago);
+
+  //cerrar el modal
+  document
+    .querySelector(".close-modal-pago")
+    .addEventListener("click", function () {
+      modalPago.remove();
+    });
+
+  // llenar el resumen
+  llenarResumenCarrito();
+
+  // mostrar mensaje de pago exitoso
+  const formularioPago = document.getElementById("formulario-pago");
+  formularioPago.addEventListener("submit", function (event) {
+    event.preventDefault();
+    modalPago.remove();
+    carrito = [];
+    actualizarCarrito();
+    showToast("Pago realizado con éxito");
+  });
+}
+
+//llenar el resumen del carrito
+function llenarResumenCarrito() {
+  const resumenCarrito = document.getElementById("resumen-carrito");
+  resumenCarrito.innerHTML = "";
+
+  let total = 0;
+
+  carrito.forEach((producto) => {
+    const precio = Number(producto.precio.replace(/^\$/, "")); //formatear el numero
+    const cantidad = Number(producto.cantidad);
+
+    const totalProducto =
+      !isNaN(precio) && !isNaN(cantidad) ? precio * cantidad : 0;
+    total += totalProducto;
+
+    const div = document.createElement("div");
+    div.classList.add("producto-en-carrito");
+
+    div.innerHTML = `
+      <p>Producto: ${producto.nombre}</p>
+      <p>Precio: $${precio}</p>
+      <p>Cantidad: ${cantidad}</p>
+      <p>Subtotal: $${totalProducto}</p>
+    `;
+
+    resumenCarrito.appendChild(div);
+  });
+
+  // Agregar total del carrito
+  const totalDiv = document.createElement("div");
+  totalDiv.innerHTML = `<strong>Total: $${total}</strong>`;
+  resumenCarrito.appendChild(totalDiv);
+}

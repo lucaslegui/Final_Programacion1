@@ -135,7 +135,6 @@ article {
     flex-direction: column;
     width: 100%;
     background-color: #000;
-    /* Ajusta al color de fondo deseado */
     transition: left 0.3s;
   }
 
@@ -151,6 +150,11 @@ article {
     margin-right: 20px ;
   }
 
+  /* center logo */
+  .navbar .logo {
+    margin: 0 auto;
+  }
+
 }
 
 /*          carrito         */
@@ -161,7 +165,7 @@ article {
   top: 0;
   right: 0;
   padding: 20px;
-  z-index: 100;
+  z-index: 4;
 
   & img {
     width: 60px;
@@ -177,7 +181,7 @@ article {
   visibility: hidden;
   position: absolute;
   right: 0;
-  z-index: 1;
+  z-index: 4;
   background-color: white;
   padding: 20px;
   max-height: 400px;
@@ -224,6 +228,35 @@ article {
   border: 1px solid #bbb;
   cursor: pointer;
   box-sizing: border-box;
+}
+
+.btn-comprar {
+  display: inline-block;
+  width: 100%;
+  height: 38px;
+  padding: 0 30px;
+  color: #242424;
+  text-align: center;
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 38px;
+  letter-spacing: .1rem;
+  text-transform: uppercase;
+  text-decoration: none;
+  white-space: nowrap;
+  background-color: transparent;
+  border-radius: 8px;
+  border: 3px solid #bbb;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+.btn-comprar:hover {
+  background-color: #ff2e63;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: all .3s ease;
+  transform: scale(1.1);
 }
 
 /*       navbar           */
@@ -304,12 +337,11 @@ article {
   color: white;
   padding: 15px;
   border-radius: 5px;
-  z-index: 1000;
+  z-index: 999;
   opacity: 0;
   transition: opacity 0.5s ease;
   animation: rainbowBackground 3s linear infinite;
   border: 1px solid white;
-  /* Opcional para resaltar */
 }
 
 .toast-show {
@@ -519,7 +551,7 @@ article {
   justify-content: center;
   align-items: center;
   position: fixed;
-  z-index: 2;
+  z-index: 3;
   left: 0;
   right: 0;
   top: 0;
@@ -536,7 +568,7 @@ article {
 }
 
 .modal-img {
-  z-index: 2;
+  z-index: 3;
   background-color: #1D212B;
   position: relative;
   display: flex;
@@ -550,7 +582,7 @@ article {
 }
 
 .modal-img img {
-  z-index: 2;
+  z-index: 4;
   position: relative;
   width: auto;
   max-height: 350px;
@@ -561,7 +593,7 @@ article {
 }
 
 .modal-info {
-  z-index: 2;
+  z-index: 3;
   background: #fff;
   display: flex;
   flex-direction: column;
@@ -816,7 +848,7 @@ option {
   left: 50%;
   transform: translateX(-50%);
   display: none;
-  z-index: 1000;
+  z-index: 6;
 }
 
 .boton-cerrar-oferta {
@@ -830,3 +862,133 @@ option {
   border-radius: 5px;
   cursor: pointer;
 }
+
+/*           modal pago         */
+
+#modal-pago {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  /* opacity: 0; */
+  /* visibility: hidden; */
+  transition: all 0.3s ease-in-out;
+}
+
+.modal-pago-contenido {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 70%;
+  max-width: 800px;
+  max-height: 80vh;
+  display: flex;
+  flex-direction: row;
+  overflow: hidden;
+}
+
+.close-modal-pago {
+  position: absolute;
+  top: 90px;
+  right: 50px;
+  font-size: 3rem;
+  cursor: pointer;
+  color: #ff0000;
+}
+
+.modal-pago-derecha{
+  overflow-y: auto;
+}
+
+.modal-pago-izquierda, .modal-pago-derecha {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+  max-height: 60vh;
+}
+
+.modal-pago-izquierda {
+  border-right: 1px solid #ddd;
+}
+
+/* Estilos para el formulario */
+#formulario-pago {
+  display: flex;
+  flex-direction: column;
+}
+
+#formulario-pago input[type="text"] {
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+#formulario-pago input[type="number"] {
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+#formulario-pago button {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+#formulario-pago button:hover {
+  background-color: #0056b3;
+}
+
+#modal-pago.mostrar {
+  opacity: 1;
+  visibility: visible;
+}
+
+.producto-en-carrito {
+  margin-bottom: 15px;
+}
+
+/* responsive modal pago */
+
+@media (max-width: 768px) {
+  .modal-pago-contenido {
+      flex-direction: column-reverse;
+      width: 95%;
+      max-height: 90vh;
+      overflow-y: auto;
+  }
+
+  .modal-pago-izquierda, .modal-pago-derecha {
+      width: 100%;
+      max-height: none;
+      overflow-y: visible;
+  }
+
+  .close-modal-pago {
+    top: 10px;
+    right: 10px;
+    font-size: 3rem;
+    cursor: pointer;
+    color: #ff0000;
+  }
+
+  /*titulos */
+  .tituloSeccion {
+    font-size: 2rem;
+  }
+}
+
+
